@@ -1,0 +1,38 @@
+class Employee:
+    def __init__(self,emp_name,emp_id,design,sal):
+        self.name=emp_name
+        self.id=emp_id
+        self.design=design
+        self.sal=sal
+    def showdata(self):
+        print(self.name)
+        print(self.id)
+        print(self.design)
+        print(self.sal)
+    def allocatelevels(self):
+        if(self.sal>='25,000'):
+            print('A')
+        elif(self.sal >='20,000' and self.sal<='25,000'):
+            print('B')
+        elif(self.sal >='15,000' and self.sal<='20,000'):
+            print('C')
+        else:
+            print('D')
+
+list1=[]
+n=int(input())
+for i in range(n):
+    name=input()
+    id=int(input())
+    design=input()
+    sal=input()
+    emp=Employee(name,id,design,sal)
+    list1.append(emp)
+for i in list1:
+    i.showdata()
+    i.allocatelevels()
+for i in list1:
+    l=[]
+    l.append(i.sal)
+print(max(l))
+
