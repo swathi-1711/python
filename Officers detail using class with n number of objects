@@ -1,0 +1,52 @@
+class Person:
+    def __init__(self,name=None,age=0,city=None,phone=None):
+        self.name=name
+        self.age=age
+        self.city=city
+        self.phone=phone
+
+if __name__=='__main__':
+    list1=[]
+    n=int(input('Enter the number of officers : '))
+    for i in range(n):
+        print('Enter the details of the employee',i+1)
+        name=input('name : ')
+        age=int(input('Age : '))
+        city=input('City : ')
+        phone=input('Contact number : ')
+        emp=Person(name,age,city,phone)
+        list1.append(emp)
+    e=1
+    while(e==1):
+        choice=int(input('Enter the Choice : '))
+        if(choice==1):
+            for i in list1:
+                print('The name and age of a officers are ')
+                print(i.name,i.age)
+
+        elif(choice==2):
+            for i in list1:
+                print("The city of a officers are ")
+                print(i.city)
+
+        elif(choice==3):
+            a=input('Enter the name to search ')
+            flag=0
+            for i in list1:
+                if(i.name==a):
+                    flag=1
+                    print(i.phone)
+                else:
+                    print('{} is not a officer'.format(a))
+
+        elif(choice==4):
+            print('Class name is ',Person.__name__)
+
+        elif(choice==5):
+            for i in list1:
+                print('The entire details of officers are ')
+                print(i.name,i.age,i.city,i.phone)
+        else:
+            exit()
+          
+        e=int(input("Do you wish to continue press 1..."))
