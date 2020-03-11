@@ -1,0 +1,7 @@
+a = input()
+list1=[]
+for i in range(len(a)):
+    b=a[:i+1]
+    c=list(set(b))
+    list1.append(len(c))
+print(max(list1))
